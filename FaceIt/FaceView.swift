@@ -12,6 +12,8 @@ class FaceView: UIView {
 
     var scale: CGFloat = 0.8
     
+    var eyesOpen: Bool = true
+    
     private var skullRadius: CGFloat {
      return min(bounds.size.width, bounds.size.height) / 2
     }
@@ -37,8 +39,16 @@ class FaceView: UIView {
         let eyeRadius = skullRadius / Ratios.skullRaduisToEyeRadius
         let eyeCenter = centerofEye(eye)
         
-        let path = UIBezierPath(arcCenter: eyeCenter, radius: eyeRadius, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+        let path: UIBezierPath
+        if eyesOpen {
+            path = UIBezierPath(arcCenter: eyeCenter, radius: eyeRadius, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
         path.lineWidth = 5.0
+        }
+        else {
+            path = UIBezierPath()
+            path.move(to: CGPoint(x: eyeCenter.x - eyeRadius, y: eyeCenter.y))
+            path.addLine(to: CGPoint(x: eyeCenter.x, y: eyeCenter.y))
+        }
         return path
     }
     
