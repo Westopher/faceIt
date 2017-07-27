@@ -52,6 +52,23 @@ class FaceView: UIView {
         return path
     }
     
+    private func pathForMouth() -> UIBezierPath {
+        
+        let mouthWidth = skullRadius / Ratios.skullRaduisToMouthWidth
+        let mouthHeight = skullRadius / Ratios.skullRaduisToMouthHeight
+        let mouthOffset = skullRadius / Ratios.skullRaduisToMouthOffset
+        
+        let mouthRect = CGRect(
+            x: skullCenter.x - mouthWidth,
+            y: skullCenter.y + mouthOffset,
+            width: mouthWidth,
+            height: mouthHeight
+            )
+        
+        let path = UIBezierPath(rect: mouthRect)
+        return path
+    }
+    
     private func pathForSkull() -> UIBezierPath {
         let path = UIBezierPath(arcCenter: skullCenter, radius: skullRadius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
         path.lineWidth = 5.0
@@ -65,6 +82,7 @@ class FaceView: UIView {
         pathForSkull().stroke()
         pathForEye(.left).stroke()
         pathForEye(.right).stroke()
+        pathForMouth().stroke()
         
     }
     
