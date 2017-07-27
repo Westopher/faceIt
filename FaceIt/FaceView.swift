@@ -14,6 +14,8 @@ class FaceView: UIView {
     
     var eyesOpen: Bool = true
     
+    var mouthCurvature: Double = 1.0 //1.0 = smile. -1.0 = frown
+    
     private var skullRadius: CGFloat {
      return min(bounds.size.width, bounds.size.height) / 2
     }
@@ -59,7 +61,7 @@ class FaceView: UIView {
         let mouthOffset = skullRadius / Ratios.skullRaduisToMouthOffset
         
         let mouthRect = CGRect(
-            x: skullCenter.x - mouthWidth,
+            x: skullCenter.x - mouthWidth / 2,
             y: skullCenter.y + mouthOffset,
             width: mouthWidth,
             height: mouthHeight
