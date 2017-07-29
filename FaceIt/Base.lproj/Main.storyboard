@@ -49,6 +49,9 @@
                             <constraint firstItem="XeL-Tv-GOz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mD1-Ci-rIt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="XeL-Tv-GOz" id="dsn-wV-Hjj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

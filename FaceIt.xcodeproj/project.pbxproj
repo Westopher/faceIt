@@ -59,10 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				3D810F871F2A258600B7CC14 /* ViewController.swift */,
+				3DA86C961F2CFAC200E5A945 /* FacialExpression.swift */,
 				3D810F991F2A283500B7CC14 /* FaceView.swift */,
 				3D810F891F2A258600B7CC14 /* Main.storyboard */,
 				3D810F981F2A266600B7CC14 /* Supporting Files */,
-				3DA86C961F2CFAC200E5A945 /* FacialExpression.swift */,
 			);
 			path = FaceIt;
 			sourceTree = "<group>";
