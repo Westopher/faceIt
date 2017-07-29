@@ -40,4 +40,6 @@ struct FacialExpression
     let eyes: Eyes
     let mouth: Mouth
     
+    let west = 1
+    
 }
